@@ -16,21 +16,38 @@
       <input id="domoName" type="text" name="name" placeholder="Domo Name"/>
       <label for="age">Age: </label>
       <input id="domoAge" type="text" name="age" placeholder="Domo Age"/>
+      <label for="domoClass">Class</label>
+      <input id="domoClass" type="text" name="classs" placeholder="Wizard" />
       <input type="hidden" name="_csrf" value={{csrfToken}} />
       <a id="makeDomoSubmit" href="#" class="makeDomoSubmit">Make Domo</a>
+    </form>
+    <form id="domoDeleteForm" name="domoDeleteForm" action="/maker2" method="POST" class="domoDeleteForm">
+      <label for="name">Name: </label>
+      <input id="theName" type="text" name="name" placeholder="Domo Name"/>
+      <label for="age">Age: </label>
+      <input id="theAge" type="text" name="age" placeholder="Domo Age"/>
+      <label for="domoClass">Class</label>
+      <input id="theClass" type="text" name="classs" placeholder="Wizard" />
+      <input type="hidden" name="_csrf" value={{csrfToken}} />
+      <a id="deleteDomoSubmit" href="#" class="deleteDomoSubmit">Delete Domo</a>
     </form>
   </section>
   <section id="domos">
     <div class="domo">
-      {{#if domos}}
-        {{#each domos}}
-          <div class="domo">
-            <img src="/assets/img/domoface.jpeg" alt="domo face" class="domoFace" />
-            <h3 class="domoName">Name: {{this.name}}</h3>
-            <h3 class="domoAge">Age: {{this.age}}</h3>
-          </div>
-        {{/each}}
-      {{/if}}
+        {{#if domos}}
+          {{#each domos}}
+            <form class="deleteQuery" name="deleteQuery" action="/maker" method="POST">
+              <input type="hidden" name="_csrf" value={{csrfToken}} />
+              <div class="domo">
+                <img src="/assets/img/domoface.jpeg" alt="domo face" class="domoFace" />
+                <h3 class="domoName">Name: <div name="name">{{this.name}}</div></h3>
+                <h3 class="domoAge">Age: <div name="age"> {{this.age}}</div></h3>
+                <h3 class="domoClass">Class: <div name="classs"> {{this.classs}}</div></h3>
+                <!--<a class="deleteButton" href="#">Delete</a>-->
+              </div>
+            </form>
+          {{/each}}
+        {{/if}}
     </div>
   </section>
   <div id="domoMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>

@@ -7,13 +7,22 @@ let DomoModel = {};
 
 const convertId = mongoose.Types.ObjectId;
 const setName = name => _.escape(name).trim();
+const setClass = classs => _.escape(classs).trim();
 
 const DomoSchema = new mongoose.Schema({
+  //HERE
+  
   name: {
     type: String,
     required: true,
     trim: true,
     set: setName,
+  },
+
+  classs: {
+    type: String,
+    trim: true,
+    set: setClass,
   },
 
   age: {
@@ -38,6 +47,7 @@ const DomoSchema = new mongoose.Schema({
 DomoSchema.statics.toAPI = doc => ({
   name: doc.name,
   age: doc.age,
+  classs: doc.classs,
 });
 
 DomoSchema.statics.findByOwner = (ownerId, callback) => {
@@ -45,7 +55,8 @@ DomoSchema.statics.findByOwner = (ownerId, callback) => {
     owner: convertId(ownerId),
   };
 
-  return DomoModel.find(search).select('name age').exec(callback);
+  //HERE
+  return DomoModel.find(search).select('name age classs').exec(callback);
 };
 
 DomoModel = mongoose.model('Domo', DomoSchema);

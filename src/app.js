@@ -63,7 +63,7 @@ app.use(session({
 app.engine('handlebars', expressHandlebars({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/../views`);
-app.use(favicon('&{__dirname}/../client/img/favicon.png'));
+app.use(favicon(`${__dirname}/../client/img/favicon.png`));
 app.disable('x-powered-by');
 app.use(cookieParser());
 

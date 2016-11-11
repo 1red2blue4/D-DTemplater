@@ -31,11 +31,30 @@ $(document).ready(function() {
         $("#domoMessage").animate({width:'hide'},350);
     
         if($("#domoName").val() == '' || $("#domoAge").val() == '') {
-            handleError("RAWR! All fields are required");
+            handleError("RAWR! All fields are required!");
             return false;
         }
 
         sendAjax($("#domoForm").attr("action"), $("#domoForm").serialize());
+        
+        return false;
+    });
+  
+    $("#deleteDomoSubmit").on("click", (e) => {
+      console.log("In deleteDomo!");
+      e.preventDefault();
+      
+      e.preventDefault();
+    
+        $("#domoMessage").animate({width:'hide'},350);
+    
+        
+        if($("#theName").val() == '' || $("#theAge").val() == '') {
+            handleError("RAWR! Name and age are required!");
+            return false;
+        }
+        
+        sendAjax($("#domoDeleteForm").attr("action"), $("#domoDeleteForm").serialize());
         
         return false;
     });
