@@ -46,16 +46,17 @@ const edit = (req, res) => {
 
   
   const { charId } = req.params;
-  
   Character.CharacterModel.findById(charId).exec((err, result) => {
     if (err)
     {
       return res.status(400).json({ error: 'You are missing some information.' });
     }
     
-    Character.CharacterModel.remove(result);
+    Character.CharacterModel.remove(charId);
     
-    console.log(result.playerName);
+    console.log(req.csrfToken);
+    
+    result.csrfToken = req.csrfToken;
     
     return res.render('editApp', result);
     
@@ -72,6 +73,7 @@ const edit = (req, res) => {
   });
 };
 
+/*
 const submitEdit = (req, res) => {
   if (!req.body.playerName || !req.body.characterName || !req.body.level || !req.body.myClass) {
     return res.status(400).json({ error: 'You are missing some information.' });
@@ -112,6 +114,7 @@ const submitEdit = (req, res) => {
   });
   
 };
+*/
 
 const makeCharacter = (req, res) => {
   if (!req.body.playerName || !req.body.characterName || !req.body.level || !req.body.myClass) {
@@ -152,7 +155,7 @@ const makeCharacter = (req, res) => {
       return res.status(400).json({ error: 'An error occurred.' });
     }
 
-    return res.json({ redirect: '/maker' });
+    return res.json({ redirect: '/characters' });
   });
 };
 

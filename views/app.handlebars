@@ -3,7 +3,7 @@
   <meta charset="utf-8"/>
   <title>DomoMaker</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png"/>
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
 </head>
 <body>
@@ -35,159 +35,173 @@
     Proficiencies
     -->
     <form id="domoForm" name="domoForm" action="/maker" method="POST" class="domoForm">
-      <div class="boxOut">
-        <label for="playerName">Player Name: </label>
-        <input id="playerName" type="text" name="playerName" placeholder="Player Name"/>
+      <div id="box1">
+        <div class="boxOut">
+          <label for="playerName">Player Name: </label>
+          <input id="playerName" type="text" name="playerName" placeholder="Player Name"/>
+        </div>
+        <div class="boxOut">
+          <label for="characterName">Character Name: </label>
+          <input id="characterName" type="text" name="characterName" placeholder="Character Name"/>
+        </div>
+        <div class="boxOut">
+          <label for="level">Level</label>
+          <input id="level" type="text" name="level" placeholder="1" />
+        </div>
+        <div class="boxOut">
+          <label for="firstAlignment">Alignment</label>
+          <select id="firstAlignment" name="firstAlignment">
+            <option value="lawful">Lawful</option>
+            <option value="neutral">Neutral</option>
+            <option value="chaotic">Chaotic</option>
+          </select>
+          <select id="secondAlignment" name="secondAlignment">
+            <option value="good">Good</option>
+            <option value="neutral">Neutral</option>
+            <option value="evil">Evil</option>
+          </select>
+        </div>
+        <div class="boxOut">
+          <label for="myClass">Class</label>
+          <input id="myClass" type="text" name="myClass" placeholder="Wizard" />
+        </div>
       </div>
-      <div class="boxOut">
-        <label for="characterName">Character Name: </label>
-        <input id="characterName" type="text" name="characterName" placeholder="Character Name"/>
+      <div id="box2">
+        <div class="boxOut">
+          <label for="STR">STR</label>
+          <select id="STR" name="STR">
+            <option value="5">+5</option>
+            <option value="4">+4</option>
+            <option value="3">+3</option>
+            <option value="2">+2</option>
+            <option value="1">+1</option>
+            <option value="0">0</option>
+            <option value="-1">-1</option>
+            <option value="-2">-2</option>
+            <option value="-3">-3</option>
+          </select>
+        </div>
+        <div class="boxOut">
+          <label for="DEX">DEX</label>
+          <select id="DEX" name="DEX">
+            <option value="5">+5</option>
+            <option value="4">+4</option>
+            <option value="3">+3</option>
+            <option value="2">+2</option>
+            <option value="1">+1</option>
+            <option value="0">0</option>
+            <option value="-1">-1</option>
+            <option value="-2">-2</option>
+            <option value="-3">-3</option>
+          </select>
+        </div>
+        <div class="boxOut">
+          <label for="CON">CON</label>
+          <select id="CON" name="CON">
+            <option value="5">+5</option>
+            <option value="4">+4</option>
+            <option value="3">+3</option>
+            <option value="2">+2</option>
+            <option value="1">+1</option>
+            <option value="0">0</option>
+            <option value="-1">-1</option>
+            <option value="-2">-2</option>
+            <option value="-3">-3</option>
+          </select>
+        </div>
+        <div class="boxOut">
+          <label for="INT">INT</label>
+          <select id="INT" name="INT">
+            <option value="5">+5</option>
+            <option value="4">+4</option>
+            <option value="3">+3</option>
+            <option value="2">+2</option>
+            <option value="1">+1</option>
+            <option value="0">0</option>
+            <option value="-1">-1</option>
+            <option value="-2">-2</option>
+            <option value="-3">-3</option>
+          </select>
+        </div>
+        <div class="boxOut">
+          <label for="WIS">WIS</label>
+          <select id="WIS" name="WIS">
+            <option value="5">+5</option>
+            <option value="4">+4</option>
+            <option value="3">+3</option>
+            <option value="2">+2</option>
+            <option value="1">+1</option>
+            <option value="0">0</option>
+            <option value="-1">-1</option>
+            <option value="-2">-2</option>
+            <option value="-3">-3</option>
+          </select>
+        </div>
+        <div class="boxOut">
+          <label for="CHA">CHA</label>
+          <select id="CHA" name="CHA">
+            <option value="5">+5</option>
+            <option value="4">+4</option>
+            <option value="3">+3</option>
+            <option value="2">+2</option>
+            <option value="1">+1</option>
+            <option value="0">0</option>
+            <option value="-1">-1</option>
+            <option value="-2">-2</option>
+            <option value="-3">-3</option>
+          </select>
+        </div>
       </div>
-      <div class="boxOut">
-        <label for="level">Level</label>
-        <input id="level" type="text" name="level" placeholder="1" />
+      <div id="box3">
+        <div class="boxOut">
+          <label for="maxHealth">Max Health</label>
+          <input id="maxHealth" type="text" name="maxHealth" placeholder="1" />
+        </div>
+        <div class="boxOut">
+          <label for="currentHealth">Current Health</label>
+          <input id="currentHealth" type="text" name="currentHealth" placeholder="1" />
+        </div>
+        <div class="boxOut">
+          <label for="hitDie">Hit Die</label>
+          <input id="hitDie" type="text" name="hitDie" placeholder="d6" />
+        </div>
+        <div class="boxOut">
+          <label for="armorClass">Armor Class</label>
+          <input id="armorClass" type="text" name="armorClass" placeholder="8" />
+        </div>
+        <div class="boxOut">
+          <label for="spellSaveDifficulty">Spell Save Difficulty</label>
+          <input id="spellSaveDifficulty" type="text" name="spellSaveDifficulty" placeholder="8" />
+        </div>
       </div>
-      <div class="boxOut">
-        <label for="firstAlignment">Alignment</label>
-        <select id="firstAlignment" name="firstAlignment">
-          <option value="lawful">Lawful</option>
-          <option value="neutral">Neutral</option>
-          <option value="chaotic">Chaotic</option>
-        </select>
-        <select id="secondAlignment" name="secondAlignment">
-          <option value="good">Good</option>
-          <option value="neutral">Neutral</option>
-          <option value="evil">Evil</option>
-        </select>
+      <div id="box5">
+        <div class="boxOut">
+          <label for="spells">Spells</label>
+          <textarea id="spells" name="spells" rows="6" cols="75" placeholder="Fireball" ></textarea>
+        </div>
       </div>
-      <div class="boxOut">
-        <label for="myClass">Class</label>
-        <input id="myClass" type="text" name="myClass" placeholder="Wizard" />
+      <div id="box4">
+        <div class="boxOut">
+          <label for="items">Items</label>
+          <textarea id="items" name="items" rows="6" cols="75" placeholder="Bag of Holding" ></textarea>
+        </div>
       </div>
-      <div class="boxOut">
-        <label for="STR">STR</label>
-        <select id="STR" name="STR">
-          <option value="5">+5</option>
-          <option value="4">+4</option>
-          <option value="3">+3</option>
-          <option value="2">+2</option>
-          <option value="1">+1</option>
-          <option value="0">0</option>
-          <option value="-1">-1</option>
-          <option value="-2">-2</option>
-          <option value="-3">-3</option>
-        </select>
-      </div>
-      <div class="boxOut">
-        <label for="DEX">DEX</label>
-        <select id="DEX" name="DEX">
-          <option value="5">+5</option>
-          <option value="4">+4</option>
-          <option value="3">+3</option>
-          <option value="2">+2</option>
-          <option value="1">+1</option>
-          <option value="0">0</option>
-          <option value="-1">-1</option>
-          <option value="-2">-2</option>
-          <option value="-3">-3</option>
-        </select>
-      </div>
-      <div class="boxOut">
-        <label for="CON">CON</label>
-        <select id="CON" name="CON">
-          <option value="5">+5</option>
-          <option value="4">+4</option>
-          <option value="3">+3</option>
-          <option value="2">+2</option>
-          <option value="1">+1</option>
-          <option value="0">0</option>
-          <option value="-1">-1</option>
-          <option value="-2">-2</option>
-          <option value="-3">-3</option>
-        </select>
-      </div>
-      <div class="boxOut">
-        <label for="INT">INT</label>
-        <select id="INT" name="INT">
-          <option value="5">+5</option>
-          <option value="4">+4</option>
-          <option value="3">+3</option>
-          <option value="2">+2</option>
-          <option value="1">+1</option>
-          <option value="0">0</option>
-          <option value="-1">-1</option>
-          <option value="-2">-2</option>
-          <option value="-3">-3</option>
-        </select>
-      </div>
-      <div class="boxOut">
-        <label for="WIS">WIS</label>
-        <select id="WIS" name="WIS">
-          <option value="5">+5</option>
-          <option value="4">+4</option>
-          <option value="3">+3</option>
-          <option value="2">+2</option>
-          <option value="1">+1</option>
-          <option value="0">0</option>
-          <option value="-1">-1</option>
-          <option value="-2">-2</option>
-          <option value="-3">-3</option>
-        </select>
-      </div>
-      <div class="boxOut">
-        <label for="CHA">CHA</label>
-        <select id="CHA" name="CHA">
-          <option value="5">+5</option>
-          <option value="4">+4</option>
-          <option value="3">+3</option>
-          <option value="2">+2</option>
-          <option value="1">+1</option>
-          <option value="0">0</option>
-          <option value="-1">-1</option>
-          <option value="-2">-2</option>
-          <option value="-3">-3</option>
-        </select>
-      </div>
-      <div class="boxOut">
-        <label for="maxHealth">Max Health</label>
-        <input id="maxHealth" type="text" name="maxHealth" placeholder="1" />
-      </div>
-      <div class="boxOut">
-        <label for="currentHealth">Current Health</label>
-        <input id="currentHealth" type="text" name="currentHealth" placeholder="1" />
-      </div>
-      <div class="boxOut">
-        <label for="hitDie">Hit Die</label>
-        <input id="hitDie" type="text" name="hitDie" placeholder="d6" />
-      </div>
-      <div class="boxOut">
-        <label for="armorClass">Armor Class</label>
-        <input id="armorClass" type="text" name="armorClass" placeholder="8" />
-      </div>
-      <div class="boxOut">
-        <label for="spellSaveDifficulty">Spell Save Difficulty</label>
-        <input id="spellSaveDifficulty" type="text" name="spellSaveDifficulty" placeholder="8" />
-      </div>
-      <div class="boxOut">
-        <label for="spells">Spells</label>
-        <textarea id="spells" name="spells" rows="6" cols="75" placeholder="Fireball" ></textarea>
-      </div>
-      <div class="boxOut">
-        <label for="items">Items</label>
-        <textarea id="items" name="items" rows="6" cols="75" placeholder="Bag of Holding" ></textarea>
-      </div>
-      <div class="boxOut">
-        <label for="characterBackground">Character Background</label>
-        <textarea id="characterBackground" name="characterBackground" rows="6" cols="75" placeholder="What I learned in Boating School is..." ></textarea>
-      </div>
-      <div class="boxOut">
-        <label for="proficiencies">Proficiencies</label>
-        <textarea id="proficiencies" name="proficiencies" rows="6" cols="75" placeholder="Yodeling" ></textarea>
+      <!--
+        <div class="boxOut">
+          <label for="characterBackground">Character Background</label>
+          <textarea id="characterBackground" name="characterBackground" rows="6" cols="75" placeholder="What I learned in Boating School is..." ></textarea>
+        </div>
+      -->
+      <div id="box6">
+        <div class="boxOut">
+          <label for="proficiencies">Proficiencies</label>
+          <textarea id="proficiencies" name="proficiencies" rows="6" cols="75" placeholder="Yodeling" ></textarea>
+        </div>
       </div>
       
       
       <input type="hidden" name="_csrf" value={{csrfToken}} />
-      <a id="makeDomoSubmit" href="#" class="makeDomoSubmit">Create Character</a>
+      <a id="makeDomoSubmit" href="#" class="makeDomoSubmit">Create</a>
       
       <!--
       <label for="name">Name: </label>

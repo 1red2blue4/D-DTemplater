@@ -1,14 +1,61 @@
+@font-face{
+  font-family: rings;
+  src: url(rings.ttf);
+}
+
 html, body {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
+    font-family: rings;
+    font-size: 10pt;
     overflow-x: hidden;
-    background: url("img/grey.jpg") no-repeat center center fixed;
+    background: url("img/parchment.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+#box1{
+  position: absolute;
+  top: 50px;
+  left: 150px;
+}
+
+#box2{
+  position: absolute;
+  top: 50px;
+  right: 100px;
+}
+
+#box3{
+  position: absolute;
+  bottom: 25px;
+  left: 150px;
+}
+
+#box4{
+  position: absolute;
+  top: 50px;
+  right: 325px;
+}
+
+#box5{
+  position: absolute;
+  top: 350px;
+  right: 425px;
+}
+
+#box6{
+  position: absolute;
+  top: 350px;
+  right: 125px;
+}
+
+#characterBackground{
+  display: none;
 }
 
 #logo {
@@ -65,7 +112,8 @@ nav:nth-child(1) {
     width: 75px;
     margin-left: 20px;
     font-size: 1.2em;
-    color: white;
+    color: #401525;
+    font-family: rings;
 }
 
 .domoForm select{
@@ -78,40 +126,76 @@ nav:nth-child(1) {
   margin-left: 30px;
 }
 
+/*
 .domoForm textarea{
   display: inline-block;
   margin-left: 30px;
 }
+*/
 
 #spells{
-  width: 325px;
-  height: 200px;
+  width: 200px;
+  height: 250px;
+  display: block;
   vertical-align: text-top;
 }
 #items{
-  width: 325px;
+  width: 350px;
   height: 200px;
+  display: block;
   vertical-align: text-top;
 }
 #characterBackground{
-  width: 325px;
-  height: 200px;
+  width: 250px;
+  height: 125px;
   vertical-align: text-top;
 }
 #proficiencies{
-  width: 325px;
-  height: 200px;
+  width: 200px;
+  height: 250px;
+  display: block;
   vertical-align: text-top;
+}
+
+.character{
+  display: block;
+  border: 2px solid black;
+  padding: 5px;
+  font-size: 12pt;
+}
+
+.character h3{
+  margin-right: 15px;
+  display: inline;
+}
+
+.character h3 div{
+  margin-right: 15px;
+  display: inline;
+  color: #960018;
+}
+
+.character a, .character a:link, .character a:visited, .character a:hover, .character a:active{
+  float: right;
+  padding-right: 10px;
+  text-decoration: none;
+  color: #aaaaaa;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: #553311;
+  transition: background-color 0.4s ease;
+  margin-right: 20px;
+}
+
+.character a:hover {
+  transition: background-color 0.8s ease;
+  background-color: #aa6600;
 }
 
 .boxOut{
   display: block;
   margin-top: 15px;
   margin-bottom: 15px;
-}
-
-.domoForm input[type=text] {
-  
 }
 
 .domoDeleteForm {
@@ -141,25 +225,29 @@ nav:nth-child(1) {
 .makeDomoSubmit {
     transition: background-color 0.4s ease;
     display: inline;
-    margin-top: 14px;
     font-size: 1.2em;
-    width: 90px;
-    background-color: #55acee;
+    width: 135px;
+    height: 25px;
+    text-align: center;
+    background-color: #553311;
     border-radius: 2px;
     padding: 3px 0px;
     color: black;
     text-decoration: none;
-    margin-left: 45px;
+    position: absolute;
+    margin: -25px 0 0 -175px;
+    left: 50%;
+    top: 50%;
     padding: 5px;
 }
 
 .makeDomoSubmit:link, .makeDomoSubmit:visited, .makeDomoSubmit:hover, .makeDomoSubmit:active {
-    color: white;
+    color: #aaaaaa;
 }
 
 .makeDomoSubmit:hover {
     transition: background-color 0.4s ease;
-    background-color: #338acc;
+    background-color: #aa6600;
 }
 
 .deleteDomoSubmit {
@@ -292,15 +380,6 @@ nav:nth-child(1) {
     overflow: hidden;
 }
 
-#domos {
-    width: 40%;
-    min-width: 400px;
-    border: 2px solid #55acee;
-    border-radius: 4px;
-    margin: 0 auto;
-    margin-top: 100px;
-}
-
 .penguin {
     width: 95%;
     margin: 0 auto;
@@ -337,32 +416,6 @@ h3.emptyDomo {
     margin: 0 auto;
     text-align: center;
     margin-top: 18px;
-}
-
-h3.domoName {
-    float:left;
-    width: 200px;
-    font-weight: bold;
-    padding-left: 65px;
-    font-size: 1.5em;
-}
-
-h3.domoAge {
-    float:right;
-    text-align: left;
-    width: 100px;
-    font-weight: bold;
-    padding-right: 40px;
-    font-size: 1.5em;
-}
-
-h3.domoClass {
-    float:left;
-    text-align: left;
-    width: 100px;
-    font-weight: bold;
-    padding-left: 10px;
-    font-size: 1.5em;
 }
 
 #hideStuff{
