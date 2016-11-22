@@ -43,6 +43,40 @@ const deleteCharacter = (req, res) => {
 };
 
 const edit = (req, res) => {
+
+  
+  const { charId } = req.params;
+  
+  Character.CharacterModel.findById(charId).exec((err, result) => {
+    if (err)
+    {
+      return res.status(400).json({ error: 'You are missing some information.' });
+    }
+    
+    Character.CharacterModel.remove(result);
+    
+    console.log(result.playerName);
+    
+    return res.render('editApp', result);
+    
+    //create an editApp.handlebars page
+    //similar to app.handlebars page, with {{this.thing}} as the "value"
+    //create a POST form in editApp.handlebars
+    //create another function here in the Character controller that finds the model by id and edits it
+    //example: result.playerName = "Markie";
+    //result.save((err, updatedResult) => {
+      //if (err) return res.status(400).json({ error: 'You are missing some information.' });
+      //res.send(updatedResult);
+    //})
+    
+  });
+};
+
+const submitEdit = (req, res) => {
+  if (!req.body.playerName || !req.body.characterName || !req.body.level || !req.body.myClass) {
+    return res.status(400).json({ error: 'You are missing some information.' });
+  }
+  
   const characterData = {
     playerName: req.body.playerName,
     characterName: req.body.characterName,
@@ -68,22 +102,15 @@ const edit = (req, res) => {
     owner: req.session.account._id,
   };
   
-  console.log("Test!");
-  
-  const findChar = Character.CharacterModel.find(characterData);
-  
-  console.dir(findChar);
-  
-  console.log("Editting!");
-  
-  Character.CharacterModel.remove(characterData, (err) => {
+  Character.CharacterModel.findOne(characterData, (err, thisCharacter) => {
     if (err) {
       console.log(err);
-      return res.status(400).json({error: "An error occurred."});
+      return res.status(400).json({ error: 'An error occurred.' });
     }
-
-    return res.json({redirect: '/editor'});
+    
+    return res.save()
   });
+  
 };
 
 const makeCharacter = (req, res) => {

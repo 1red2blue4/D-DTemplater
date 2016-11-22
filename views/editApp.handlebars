@@ -37,24 +37,24 @@
     <form id="domoForm" name="domoForm" action="/maker" method="POST" class="domoForm">
       <div class="boxOut">
         <label for="playerName">Player Name: </label>
-        <input id="playerName" type="text" name="playerName" placeholder="Player Name"/>
+        <input id="playerName" type="text" name="playerName" placeholder="Player Name" value="{{this.playerName}}"/>
       </div>
       <div class="boxOut">
         <label for="characterName">Character Name: </label>
-        <input id="characterName" type="text" name="characterName" placeholder="Character Name"/>
+        <input id="characterName" type="text" name="characterName" placeholder="Character Name" value="{{this.characterName}}"/>
       </div>
       <div class="boxOut">
         <label for="level">Level</label>
-        <input id="level" type="text" name="level" placeholder="1" />
+        <input id="level" type="text" name="level" placeholder="1" value="{{this.level}}" />
       </div>
       <div class="boxOut">
         <label for="firstAlignment">Alignment</label>
-        <select id="firstAlignment" name="firstAlignment">
+        <select id="firstAlignment" name="firstAlignment" value="{{this.firstAlignment}}">
           <option value="lawful">Lawful</option>
           <option value="neutral">Neutral</option>
           <option value="chaotic">Chaotic</option>
         </select>
-        <select id="secondAlignment" name="secondAlignment">
+        <select id="secondAlignment" name="secondAlignment" value="{{this.secondAlignment}}">
           <option value="good">Good</option>
           <option value="neutral">Neutral</option>
           <option value="evil">Evil</option>
@@ -62,11 +62,11 @@
       </div>
       <div class="boxOut">
         <label for="myClass">Class</label>
-        <input id="myClass" type="text" name="myClass" placeholder="Wizard" />
+        <input id="myClass" type="text" name="myClass" placeholder="Wizard" value="{{this.myClass}}" />
       </div>
       <div class="boxOut">
         <label for="STR">STR</label>
-        <select id="STR" name="STR">
+        <select id="STR" name="STR" value="{{this.STR}}">
           <option value="5">+5</option>
           <option value="4">+4</option>
           <option value="3">+3</option>
@@ -80,7 +80,7 @@
       </div>
       <div class="boxOut">
         <label for="DEX">DEX</label>
-        <select id="DEX" name="DEX">
+        <select id="DEX" name="DEX" value="{{this.DEX}}">
           <option value="5">+5</option>
           <option value="4">+4</option>
           <option value="3">+3</option>
@@ -94,7 +94,7 @@
       </div>
       <div class="boxOut">
         <label for="CON">CON</label>
-        <select id="CON" name="CON">
+        <select id="CON" name="CON" value="{{this.CON}}">
           <option value="5">+5</option>
           <option value="4">+4</option>
           <option value="3">+3</option>
@@ -108,7 +108,7 @@
       </div>
       <div class="boxOut">
         <label for="INT">INT</label>
-        <select id="INT" name="INT">
+        <select id="INT" name="INT" value="{{this.INT}}">
           <option value="5">+5</option>
           <option value="4">+4</option>
           <option value="3">+3</option>
@@ -122,7 +122,7 @@
       </div>
       <div class="boxOut">
         <label for="WIS">WIS</label>
-        <select id="WIS" name="WIS">
+        <select id="WIS" name="WIS" value="{{this.WIS}}">
           <option value="5">+5</option>
           <option value="4">+4</option>
           <option value="3">+3</option>
@@ -136,7 +136,7 @@
       </div>
       <div class="boxOut">
         <label for="CHA">CHA</label>
-        <select id="CHA" name="CHA">
+        <select id="CHA" name="CHA" value="{{this.CHA}}">
           <option value="5">+5</option>
           <option value="4">+4</option>
           <option value="3">+3</option>
@@ -150,44 +150,44 @@
       </div>
       <div class="boxOut">
         <label for="maxHealth">Max Health</label>
-        <input id="maxHealth" type="text" name="maxHealth" placeholder="1" />
+        <input id="maxHealth" type="text" name="maxHealth" placeholder="1" value="{{this.maxHealth}}" />
       </div>
       <div class="boxOut">
         <label for="currentHealth">Current Health</label>
-        <input id="currentHealth" type="text" name="currentHealth" placeholder="1" />
+        <input id="currentHealth" type="text" name="currentHealth" placeholder="1" value="{{this.currentHealth}}"/>
       </div>
       <div class="boxOut">
         <label for="hitDie">Hit Die</label>
-        <input id="hitDie" type="text" name="hitDie" placeholder="d6" />
+        <input id="hitDie" type="text" name="hitDie" placeholder="d6" value="{{this.hitDie}}" />
       </div>
       <div class="boxOut">
         <label for="armorClass">Armor Class</label>
-        <input id="armorClass" type="text" name="armorClass" placeholder="8" />
+        <input id="armorClass" type="text" name="armorClass" placeholder="8" value="{{this.armorClass}}" />
       </div>
       <div class="boxOut">
         <label for="spellSaveDifficulty">Spell Save Difficulty</label>
-        <input id="spellSaveDifficulty" type="text" name="spellSaveDifficulty" placeholder="8" />
+        <input id="spellSaveDifficulty" type="text" name="spellSaveDifficulty" placeholder="8" value="{{this.spellSaveDifficulty}}" />
       </div>
       <div class="boxOut">
         <label for="spells">Spells</label>
-        <textarea id="spells" name="spells" rows="6" cols="75" placeholder="Fireball" ></textarea>
+        <textarea id="spells" name="spells" rows="6" cols="75" placeholder="Fireball" >{{this.spells}}</textarea>
       </div>
       <div class="boxOut">
         <label for="items">Items</label>
-        <textarea id="items" name="items" rows="6" cols="75" placeholder="Bag of Holding" ></textarea>
+        <textarea id="items" name="items" rows="6" cols="75" placeholder="Bag of Holding" >{{this.items}}</textarea>
       </div>
       <div class="boxOut">
         <label for="characterBackground">Character Background</label>
-        <textarea id="characterBackground" name="characterBackground" rows="6" cols="75" placeholder="What I learned in Boating School is..." ></textarea>
+        <textarea id="characterBackground" name="characterBackground" rows="6" cols="75" placeholder="What I learned in Boating School is..." >{{this.characterBackground}}</textarea>
       </div>
       <div class="boxOut">
         <label for="proficiencies">Proficiencies</label>
-        <textarea id="proficiencies" name="proficiencies" rows="6" cols="75" placeholder="Yodeling" ></textarea>
+        <textarea id="proficiencies" name="proficiencies" rows="6" cols="75" placeholder="Yodeling">{{this.proficiencies}}</textarea>
       </div>
       
       
       <input type="hidden" name="_csrf" value={{csrfToken}} />
-      <a id="makeDomoSubmit" href="#" class="makeDomoSubmit">Create Character</a>
+      <a id="makeDomoSubmit" href="#" class="makeDomoSubmit">Edit Character</a>
       
       <!--
       <label for="name">Name: </label>

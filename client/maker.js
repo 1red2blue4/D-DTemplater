@@ -40,12 +40,13 @@ $(document).ready(function() {
         return false;
     });
   
-   $(".editCharacter").on("click", (e) => {
+   
+   $("#editCharacter").on("click", (e) => {
         e.preventDefault();
 
         $("#wizMessage").animate({width:'hide'},350);
      
-        sendAjax($("#editQuery").attr("action"), $("#editQuery").serialize());
+        sendAjax($("#editForm").attr("action"), $("#editForm").serialize());
 
         return false;
     });

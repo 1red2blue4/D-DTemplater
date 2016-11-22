@@ -50,7 +50,6 @@
     <div class="characters">
         {{#if characters}}
           {{#each characters}}
-            <form class="editQuery" name="editQuery" action="/edit" method="POST">
               <input type="hidden" name="_csrf" value={{csrfToken}} />
               <div class="character">
                 <h3 class="domoName">Name: <div name="characterName">{{this.characterName}}</div></h3>
@@ -72,9 +71,8 @@
                   <div name="spellSaveDifficulty">{{this.spellSaveDifficulty}}</div>
                 </div>
                 
-                <a id="editCharacter" href="#" class="editCharacter">Edit Character</a>
+                <a href="/edit/{{this.id}}">Edit Character</a>
               </div>
-            </form>
           {{/each}}
         {{/if}}
     </div>
