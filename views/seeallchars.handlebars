@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>DomoMaker</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+  <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+</head>
+<body>
+  <nav><a href="/login"><img id="logo" src="/assets/img/logo.png" alt="logo"/></a>
+    <div class="navlink"><a href="/logout">Log Out</a><a href="/maker">New Character</a></div>
+  </nav>
+    
+    <!--
+    Player Name
+    Character Name
+    Level
+    Alignment
+    Class
+    STR
+    DEX
+    CON
+    INT
+    WIS
+    CHA
+    Max Health
+    Current Health
+    Hit Die
+    Armor Class
+    Spell Save Difficulty
+    Spells
+    Items
+    Character Background
+    Proficiencies
+    -->
+    
+    <!--
+    <form id="domoDeleteForm" name="domoDeleteForm" action="/edit" method="POST" class="domoDeleteForm">
+      <label for="name">Name: </label>
+      <input id="theName" type="text" name="name" placeholder="Domo Name"/>
+      <label for="age">Age: </label>
+      <input id="theAge" type="text" name="age" placeholder="Domo Age"/>
+      <label for="domoClass">Class</label>
+      <input id="theClass" type="text" name="classs" placeholder="Wizard" />
+      <input type="hidden" name="_csrf" value={{csrfToken}} />
+      <a id="deleteDomoSubmit" href="#" class="deleteDomoSubmit">Delete Domo</a>
+    </form>
+    -->
+  <section id="characters">
+    <div class="characters">
+        {{#if characters}}
+          {{#each characters}}
+            <form class="editQuery" name="editQuery" action="/edit" method="POST">
+              <input type="hidden" name="_csrf" value={{csrfToken}} />
+              <div class="character">
+                <h3 class="domoName">Name: <div name="characterName">{{this.characterName}}</div></h3>
+                <h3 class="level">Level: <div name="level"> {{this.level}}</div></h3>
+                <h3 class="myClass">Class: <div name="myClass"> {{this.myClass}}</div></h3>
+                <h3 class="alignment">Alignment: <div name="alignment"> {{this.firstAlignment}} {{this.secondAlignment}}</div></h3>
+                <div id="hideStuff">
+                  <div name="playerName">{{this.playerName}}</div>
+                  <div name="STR">{{this.STR}}</div>
+                  <div name="DEX">{{this.DEX}}</div>
+                  <div name="CON">{{this.CON}}</div>
+                  <div name="INT">{{this.INT}}</div>
+                  <div name="WIS">{{this.WIS}}</div>
+                  <div name="CHA">{{this.CHA}}</div>
+                  <div name="maxHealth">{{this.maxHealth}}</div>
+                  <div name="currentHealth">{{this.currentHealth}}</div>
+                  <div name="hitDie">{{this.hitDie}}</div>
+                  <div name="armorClass">{{this.armorClass}}</div>
+                  <div name="spellSaveDifficulty">{{this.spellSaveDifficulty}}</div>
+                </div>
+                
+                <a id="editCharacter" href="#" class="editCharacter">Edit Character</a>
+              </div>
+            </form>
+          {{/each}}
+        {{/if}}
+    </div>
+  </section>
+  <div id="wizMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
+    <h3><span id="errorMessage"></span></h3><img id="penguin" src="/assets/img/logo_no_back.png" alt="Curious Conjurer"/>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  <script src="/assets/maker.js" type="text/babel"></script>
+</body>
+</html>

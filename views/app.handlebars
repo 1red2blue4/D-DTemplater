@@ -7,11 +7,189 @@
   <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
 </head>
 <body>
-  <nav><a href="/login"><img id="logo" src="/assets/img/face.png" alt="face logo"/></a>
-    <div class="navlink"><a href="/logout">Log out</a></div>
+  <nav><a href="/login"><img id="logo" src="/assets/img/logo.png" alt="logo"/></a>
+    <div class="navlink"><a href="/logout">Log Out</a><a href="/characters">Characters</a></div>
   </nav>
   <section id="makeDomo">
+    
+    <!--
+    Player Name
+    Character Name
+    Level
+    Alignment
+    Class
+    STR
+    DEX
+    CON
+    INT
+    WIS
+    CHA
+    Max Health
+    Current Health
+    Hit Die
+    Armor Class
+    Spell Save Difficulty
+    Spells
+    Items
+    Character Background
+    Proficiencies
+    -->
     <form id="domoForm" name="domoForm" action="/maker" method="POST" class="domoForm">
+      <div class="boxOut">
+        <label for="playerName">Player Name: </label>
+        <input id="playerName" type="text" name="playerName" placeholder="Player Name"/>
+      </div>
+      <div class="boxOut">
+        <label for="characterName">Character Name: </label>
+        <input id="characterName" type="text" name="characterName" placeholder="Character Name"/>
+      </div>
+      <div class="boxOut">
+        <label for="level">Level</label>
+        <input id="level" type="text" name="level" placeholder="1" />
+      </div>
+      <div class="boxOut">
+        <label for="firstAlignment">Alignment</label>
+        <select id="firstAlignment" name="firstAlignment">
+          <option value="lawful">Lawful</option>
+          <option value="neutral">Neutral</option>
+          <option value="chaotic">Chaotic</option>
+        </select>
+        <select id="secondAlignment" name="secondAlignment">
+          <option value="good">Good</option>
+          <option value="neutral">Neutral</option>
+          <option value="evil">Evil</option>
+        </select>
+      </div>
+      <div class="boxOut">
+        <label for="myClass">Class</label>
+        <input id="myClass" type="text" name="myClass" placeholder="Wizard" />
+      </div>
+      <div class="boxOut">
+        <label for="STR">STR</label>
+        <select id="STR" name="STR">
+          <option value="5">+5</option>
+          <option value="4">+4</option>
+          <option value="3">+3</option>
+          <option value="2">+2</option>
+          <option value="1">+1</option>
+          <option value="0">0</option>
+          <option value="-1">-1</option>
+          <option value="-2">-2</option>
+          <option value="-3">-3</option>
+        </select>
+      </div>
+      <div class="boxOut">
+        <label for="DEX">DEX</label>
+        <select id="DEX" name="DEX">
+          <option value="5">+5</option>
+          <option value="4">+4</option>
+          <option value="3">+3</option>
+          <option value="2">+2</option>
+          <option value="1">+1</option>
+          <option value="0">0</option>
+          <option value="-1">-1</option>
+          <option value="-2">-2</option>
+          <option value="-3">-3</option>
+        </select>
+      </div>
+      <div class="boxOut">
+        <label for="CON">CON</label>
+        <select id="CON" name="CON">
+          <option value="5">+5</option>
+          <option value="4">+4</option>
+          <option value="3">+3</option>
+          <option value="2">+2</option>
+          <option value="1">+1</option>
+          <option value="0">0</option>
+          <option value="-1">-1</option>
+          <option value="-2">-2</option>
+          <option value="-3">-3</option>
+        </select>
+      </div>
+      <div class="boxOut">
+        <label for="INT">INT</label>
+        <select id="INT" name="INT">
+          <option value="5">+5</option>
+          <option value="4">+4</option>
+          <option value="3">+3</option>
+          <option value="2">+2</option>
+          <option value="1">+1</option>
+          <option value="0">0</option>
+          <option value="-1">-1</option>
+          <option value="-2">-2</option>
+          <option value="-3">-3</option>
+        </select>
+      </div>
+      <div class="boxOut">
+        <label for="WIS">WIS</label>
+        <select id="WIS" name="WIS">
+          <option value="5">+5</option>
+          <option value="4">+4</option>
+          <option value="3">+3</option>
+          <option value="2">+2</option>
+          <option value="1">+1</option>
+          <option value="0">0</option>
+          <option value="-1">-1</option>
+          <option value="-2">-2</option>
+          <option value="-3">-3</option>
+        </select>
+      </div>
+      <div class="boxOut">
+        <label for="CHA">CHA</label>
+        <select id="CHA" name="CHA">
+          <option value="5">+5</option>
+          <option value="4">+4</option>
+          <option value="3">+3</option>
+          <option value="2">+2</option>
+          <option value="1">+1</option>
+          <option value="0">0</option>
+          <option value="-1">-1</option>
+          <option value="-2">-2</option>
+          <option value="-3">-3</option>
+        </select>
+      </div>
+      <div class="boxOut">
+        <label for="maxHealth">Max Health</label>
+        <input id="maxHealth" type="text" name="maxHealth" placeholder="1" />
+      </div>
+      <div class="boxOut">
+        <label for="currentHealth">Current Health</label>
+        <input id="currentHealth" type="text" name="currentHealth" placeholder="1" />
+      </div>
+      <div class="boxOut">
+        <label for="hitDie">Hit Die</label>
+        <input id="hitDie" type="text" name="hitDie" placeholder="d6" />
+      </div>
+      <div class="boxOut">
+        <label for="armorClass">Armor Class</label>
+        <input id="armorClass" type="text" name="armorClass" placeholder="8" />
+      </div>
+      <div class="boxOut">
+        <label for="spellSaveDifficulty">Spell Save Difficulty</label>
+        <input id="spellSaveDifficulty" type="text" name="spellSaveDifficulty" placeholder="8" />
+      </div>
+      <div class="boxOut">
+        <label for="spells">Spells</label>
+        <textarea id="spells" name="spells" rows="6" cols="75" placeholder="Fireball" ></textarea>
+      </div>
+      <div class="boxOut">
+        <label for="items">Items</label>
+        <textarea id="items" name="items" rows="6" cols="75" placeholder="Bag of Holding" ></textarea>
+      </div>
+      <div class="boxOut">
+        <label for="characterBackground">Character Background</label>
+        <textarea id="characterBackground" name="characterBackground" rows="6" cols="75" placeholder="What I learned in Boating School is..." ></textarea>
+      </div>
+      <div class="boxOut">
+        <label for="proficiencies">Proficiencies</label>
+        <textarea id="proficiencies" name="proficiencies" rows="6" cols="75" placeholder="Yodeling" ></textarea>
+      </div>
+      
+      
+      <input type="hidden" name="_csrf" value={{csrfToken}} />
+      <a id="makeDomoSubmit" href="#" class="makeDomoSubmit">Create Character</a>
+      
+      <!--
       <label for="name">Name: </label>
       <input id="domoName" type="text" name="name" placeholder="Domo Name"/>
       <label for="age">Age: </label>
@@ -19,9 +197,12 @@
       <label for="domoClass">Class</label>
       <input id="domoClass" type="text" name="classs" placeholder="Wizard" />
       <input type="hidden" name="_csrf" value={{csrfToken}} />
+      
       <a id="makeDomoSubmit" href="#" class="makeDomoSubmit">Make Domo</a>
+      -->
     </form>
-    <form id="domoDeleteForm" name="domoDeleteForm" action="/maker2" method="POST" class="domoDeleteForm">
+    <!--
+    <form id="domoDeleteForm" name="domoDeleteForm" action="/edit" method="POST" class="domoDeleteForm">
       <label for="name">Name: </label>
       <input id="theName" type="text" name="name" placeholder="Domo Name"/>
       <label for="age">Age: </label>
@@ -31,27 +212,10 @@
       <input type="hidden" name="_csrf" value={{csrfToken}} />
       <a id="deleteDomoSubmit" href="#" class="deleteDomoSubmit">Delete Domo</a>
     </form>
+    -->
   </section>
-  <section id="domos">
-    <div class="domo">
-        {{#if domos}}
-          {{#each domos}}
-            <form class="deleteQuery" name="deleteQuery" action="/maker" method="POST">
-              <input type="hidden" name="_csrf" value={{csrfToken}} />
-              <div class="domo">
-                <img src="/assets/img/domoface.jpeg" alt="domo face" class="domoFace" />
-                <h3 class="domoName">Name: <div name="name">{{this.name}}</div></h3>
-                <h3 class="domoAge">Age: <div name="age"> {{this.age}}</div></h3>
-                <h3 class="domoClass">Class: <div name="classs"> {{this.classs}}</div></h3>
-                <!--<a class="deleteButton" href="#">Delete</a>-->
-              </div>
-            </form>
-          {{/each}}
-        {{/if}}
-    </div>
-  </section>
-  <div id="domoMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
-    <h3><span id="errorMessage"></span></h3><img id="domo" src="assets/img/domo.png" alt="domo"/>
+  <div id="wizMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
+    <h3><span id="errorMessage"></span></h3><img id="penguin" src="/assets/img/logo_no_back.png" alt="Curious Conjurer"/>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
   <script src="/assets/maker.js" type="text/babel"></script>

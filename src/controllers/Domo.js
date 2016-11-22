@@ -18,18 +18,17 @@ const deleteDomo = (req, res) => {
     name: req.body.name,
     owner: req.session.account._id,
   };
-  
-  console.log("Deleted!");
 
-  Domo.DomoModel.remove(domoData, (err) =>{
-    if (err){
+  console.log('Deleted!');
+
+  Domo.DomoModel.remove(domoData, (err) => {
+    if (err) {
       console.log(err);
       return res.status(400).json({ error: 'An error occurred.' });
     }
-    
+
     return res.json({ redirect: '/maker' });
   });
-  
 };
 
 const makeDomo = (req, res) => {
@@ -37,7 +36,7 @@ const makeDomo = (req, res) => {
     return res.status(400).json({ error: 'RAWR! Both name and age are required!' });
   }
 
-  //HERE
+  // HERE
   const domoData = {
     name: req.body.name,
     age: req.body.age,

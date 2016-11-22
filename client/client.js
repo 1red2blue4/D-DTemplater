@@ -2,7 +2,7 @@ $(document).ready(() => {
 
     const handleError = (message) => {
         $("#errorMessage").text(message);
-        $("#domoMessage").animate({width:'toggle'},350);
+        $("#wizMessage").animate({width:'toggle'},350);
     }
     
     const sendAjax = (action, data) => {
@@ -13,7 +13,7 @@ $(document).ready(() => {
             data: data,
             dataType: "json",
             success: (result, status, xhr) => {
-                $("#domoMessage").animate({width:'hide'},350);
+                $("#wizMessage").animate({width:'hide'},350);
 
                 window.location = result.redirect;
             },
@@ -28,15 +28,15 @@ $(document).ready(() => {
     $("#signupSubmit").on("click", (e) => {
         e.preventDefault();
     
-        $("#domoMessage").animate({width:'hide'},350);
+        $("#wizMessage").animate({width:'hide'},350);
     
         if($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '') {
-            handleError("RAWR! All fields are required");
+            handleError("Please enter all information.");
             return false;
         }
         
         if($("#pass").val() !== $("#pass2").val()) {
-            handleError("RAWR! Passwords do not match");
+            handleError("Your passwords did not match.");
             return false;           
         }
 
@@ -51,7 +51,7 @@ $(document).ready(() => {
         $("#domoMessage").animate({width:'hide'},350);
     
         if($("#user").val() == '' || $("#pass").val() == '') {
-            handleError("RAWR! Username or password is empty");
+            handleError("Both username and password are needed.");
             return false;
         }
     

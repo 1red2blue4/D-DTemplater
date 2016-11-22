@@ -4,6 +4,11 @@ html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background: url("img/grey.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #logo {
@@ -17,7 +22,7 @@ html, body {
 nav {
     width: 100%;
     height: 50px;
-    background-color: #55acee;
+    background-color: #891300;
 }
 
 nav:nth-child(1) {
@@ -34,26 +39,23 @@ nav:nth-child(1) {
 }
 
 .navlink a, .navlink a:link, .navlink a:visited, .navlink a:hover, .navlink a:active {
-    color: white;
+    color: #aaaaaa;
     text-decoration: none;
     padding: 5px;
     border-radius: 4px;
-    background-color: #55acee;
+    background-color: #553311;
     transition: background-color 0.4s ease;
 }
 
 .navlink a:hover {
     transition: background-color 0.8s ease;
-    background-color: #66bdff;
+    background-color: #aa6600;
 }
 
 .domoForm {
-    border: 2px solid #338acc;
-    height: 90px;
     width: 950px;
     margin-top:0px;
     padding-top:10px;
-    background-color: #55acee;
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
 }
@@ -61,14 +63,55 @@ nav:nth-child(1) {
 .domoForm label {
     display: inline-block;
     width: 75px;
-    margin-left: 10px;
+    margin-left: 20px;
     font-size: 1.2em;
-    float: left;
     color: white;
 }
 
+.domoForm select{
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.domoForm input{
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.domoForm textarea{
+  display: inline-block;
+  margin-left: 30px;
+}
+
+#spells{
+  width: 325px;
+  height: 200px;
+  vertical-align: text-top;
+}
+#items{
+  width: 325px;
+  height: 200px;
+  vertical-align: text-top;
+}
+#characterBackground{
+  width: 325px;
+  height: 200px;
+  vertical-align: text-top;
+}
+#proficiencies{
+  width: 325px;
+  height: 200px;
+  vertical-align: text-top;
+}
+
+.boxOut{
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 .domoForm input[type=text] {
-    float:left;
+  
 }
 
 .domoDeleteForm {
@@ -200,7 +243,7 @@ nav:nth-child(1) {
     box-shadow: 0px 0px 1px 1px #55acee;
 }
 
-#domoMessage {
+#wizMessage {
     display:none;
     top: 250px;
     width: 250px;
@@ -211,17 +254,21 @@ nav:nth-child(1) {
     overflow: hidden;
 }
 
-#domoMessage h3 {
+#wizMessage h3 {
     width: 200px;
     position: absolute;
-    top: 0px;
-    left: 20px;
+    top: 140px;
+    right: 40px;
+    overflow: hidden;
 }
 
 #speech {
     height: 120px;
     width: 250px;
-    z-index:300;
+    margin-top: 140px;
+    margin-right: 60px;
+    z-index: 10;
+    overflow: hidden;
 }
 
 #errorMessage {
@@ -229,17 +276,20 @@ nav:nth-child(1) {
     font-weight: bold;
     color: red;
     font-style: italic;
+    overflow: hidden;
+    z-index: 15;
 }
 
-#domo {
-    z-index: 225;
-    margin-top: -20px;
-    margin-left: 135px;
-    height: 450px;
-    width: 300px;
+#penguin {
+    z-index: -15;
+    margin-top: -150px;
+    margin-left: 40px;
+    height: 350px;
+    width: 350px;
     -ms-transform: rotate(330deg);
     -webkit-transform: rotate(330deg); 
     transform: rotate(330deg);
+    overflow: hidden;
 }
 
 #domos {
@@ -251,7 +301,7 @@ nav:nth-child(1) {
     margin-top: 100px;
 }
 
-.domo {
+.penguin {
     width: 95%;
     margin: 0 auto;
     margin-top: 2px;
@@ -264,7 +314,7 @@ nav:nth-child(1) {
     overflow: hidden;
 }
 
-.domo:hover {
+.penguin:hover {
     transition: border-color 0.2s ease-out;
     border-color: rgba(255,255,255, 0.8);
     transition: background-color 2.6s ease-out;
@@ -315,10 +365,14 @@ h3.domoClass {
     font-size: 1.5em;
 }
 
-.domo:first-child {
+#hideStuff{
+  display: none;
+}
+
+.penguin:first-child {
     margin-top: 10px;
 }
 
-.domo:last-child {
+.penguin:last-child {
     margin-bottom:10px;
 }

@@ -10,8 +10,8 @@ const setName = name => _.escape(name).trim();
 const setClass = classs => _.escape(classs).trim();
 
 const DomoSchema = new mongoose.Schema({
-  //HERE
-  
+  // HERE
+
   name: {
     type: String,
     required: true,
@@ -55,7 +55,7 @@ DomoSchema.statics.findByOwner = (ownerId, callback) => {
     owner: convertId(ownerId),
   };
 
-  //HERE
+  // HERE
   return DomoModel.find(search).select('name age classs').exec(callback);
 };
 

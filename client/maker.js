@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     const handleError = (message) => {
         $("#errorMessage").text(message);
-        $("#domoMessage").animate({width:'toggle'},350);
+        $("#wizMessage").animate({width:'toggle'},350);
     }
     
     const sendAjax = (action, data) => {
@@ -13,7 +13,7 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: (result, status, xhr) => {
-                $("#domoMessage").animate({width:'hide'},350);
+                $("#wizMessage").animate({width:'hide'},350);
 
                 window.location = result.redirect;
             },
@@ -28,10 +28,10 @@ $(document).ready(function() {
     $("#makeDomoSubmit").on("click", (e) => {
         e.preventDefault();
     
-        $("#domoMessage").animate({width:'hide'},350);
+        $("#wizMessage").animate({width:'hide'},350);
     
         if($("#domoName").val() == '' || $("#domoAge").val() == '') {
-            handleError("RAWR! All fields are required!");
+            handleError("Please enter all information.");
             return false;
         }
 
@@ -40,22 +40,30 @@ $(document).ready(function() {
         return false;
     });
   
+   $(".editCharacter").on("click", (e) => {
+        e.preventDefault();
+
+        $("#wizMessage").animate({width:'hide'},350);
+     
+        sendAjax($("#editQuery").attr("action"), $("#editQuery").serialize());
+
+        return false;
+    });
+  
     $("#deleteDomoSubmit").on("click", (e) => {
-      console.log("In deleteDomo!");
-      e.preventDefault();
       
-      e.preventDefault();
-    
-        $("#domoMessage").animate({width:'hide'},350);
-    
-        
+        e.preventDefault();
+
+        $("#wizMessage").animate({width:'hide'},350);
+
+
         if($("#theName").val() == '' || $("#theAge").val() == '') {
-            handleError("RAWR! Name and age are required!");
+            handleError("You are missing some details.");
             return false;
         }
-        
+
         sendAjax($("#domoDeleteForm").attr("action"), $("#domoDeleteForm").serialize());
-        
+
         return false;
     });
     
